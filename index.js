@@ -86,8 +86,10 @@ const csvString2 = "Index,Mass (kg),Spring 1 (m),Spring 2 (m)\n1,0.00,0.050,0.05
 // Declare my initializing variables ###
 // need a for loop to iterate through the csv string and if statements to check for commas and new lines. ###
 // when a comma is found, .push the current cell to the current row.  ###
-// just like before, upon .push to the current row, we must reset the current cell.
-// when a new line \n is found, .push the current cell to current row
+// just like before, upon .push to the current row, we must reset the current cell. ###
+// when a new line \n is found, .push the current cell to current row ###
+// check if the rows array is empty. If it is, set the number of columns to the length of the current row. ###
+// add the current row to the rows array. ###
 function parseCSV2D(csv) {
     const rows = []; // Initialize an array to store the rows (empty)
     let currentCell = ''; // Initialize the string to store to the current cell
@@ -102,7 +104,19 @@ function parseCSV2D(csv) {
             currentRow.push(currentCell)
             // reset the current cell
             currentCell = '';
-            console.log('Current Row after comma:', currentRow); // Log the current row after adding a cell
+        }
+        // else if statement that checks if the current character is \n. This will signal the end of a row.
+        else if (char === '\n') {
+            // .push the current cell to the current row
+            currentRow.push(currentCell);
+            // checks if rows array is empty.
+            // if the first row is empty, it will set the number of columns to the length of the current row.
+            // by determining the number of columns in the first row, we can set the number of columns to ensure proper structure of the array.
+            if (rows.length === 0) {
+                numColumn = currentRow.length;
+            }
+
+
         }
     }
 
