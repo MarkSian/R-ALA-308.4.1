@@ -83,12 +83,32 @@ const csvString1 = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,
 const csvString2 = "Index,Mass (kg),Spring 1 (m),Spring 2 (m)\n1,0.00,0.050,0.050\n2,0.49,0.066,0.066\n3,0.98,0.087,0.080\n4,1.47,0.116,0.108\n5,1.96,0.142,0.138\n6,2.45,0.166,0.158\n7,2.94,0.193,0.174\n8,3.43,0.204,0.192\n9,3.92,0.226,0.205\n10,4.41,0.238,0.232";
 
 // Transform the parseCSV function to accomplish the new task: store the result in a two-dimensional array
-// Declare my initializing variables
+// Declare my initializing variables ###
+// need a for loop to iterate through the csv string and if statements to check for commas and new lines. ###
+// when a comma is found, .push the current cell to the current row.  ###
+// just like before, upon .push to the current row, we must reset the current cell.
+// when a new line \n is found, .push the current cell to current row
 function parseCSV2D(csv) {
     const rows = []; // Initialize an array to store the rows (empty)
     let currentCell = ''; // Initialize the string to store to the current cell
     let currentRow = []; // Initialize the array to store the current row
     let numColumn = 0; // Initialize a variable to track the number of columns in the parse csv
 
+    // this loop iterates through the strings contained in csvString1 and csvString2
+    for (const char of csv) {
+        // if statement that checks if the current character is a comma. If it is, it signifies the end of a cell.
+        if (char === ',') {
+            // .push the current cell to the current row
+            currentRow.push(currentCell)
+            // reset the current cell
+            currentCell = '';
+            console.log('Current Row after comma:', currentRow); // Log the current row after adding a cell
+        }
+    }
 
 }
+// Test csvString1
+parseCSV2D(csvString1);
+
+// Test csvString2
+parseCSV2D(csvString2);
