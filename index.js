@@ -150,14 +150,14 @@ function parseCSV2D(csv) {
     if (currentRow.length === numColumn) {
         rows.push(currentRow);
     }
-    // return the parsed rows array and log it to the console
-    console.log(rows);
+    // return the parsed rows array
     return rows;
 
 
 }
 // call the parseCSV2D function with csvString1 
-parseCSV2D(csvString1);
+const resultArray1 = parseCSV2D(csvString1);
+console.log(resultArray1);
 // log result:
 // [
 //     [ 'ID', 'Name', 'Occupation', 'Age' ],      
@@ -167,7 +167,8 @@ parseCSV2D(csvString1);
 //     [ '98', 'Bill', 'Doctor’s Assistant', '26' ]
 //   ]
 
-parseCSV2D(csvString2);
+const resultArray2 = parseCSV2D(csvString2);
+console.log(resultArray2);
 // log result:
 // [
 //     [ 'Index', 'Mass (kg)', 'Spring 1 (m)', 'Spring 2 (m)' ],
@@ -183,4 +184,27 @@ parseCSV2D(csvString2);
 //     [ '10', '4.41', '0.238', '0.232' ]
 //   ]
 
+/* Feeling Loopy Part 3: Transforming Data */
+// We will transform our rows into objects
+// Create an object where the key of each value is the heading for that value's column.
+// Convert these keys to all lowercase letters for consistency.
+// Store these objects in an array, in the order that they were originally listed.
+// You do not need to create an object for the heading row itself
+// *While we can add this functionality to the parseCSV2D function, it is better to create a new function for this task. Be sure to make a new function!!!
 
+/* Visual Representation */
+// FROM :
+//     [ 'ID', 'Name', 'Occupation', 'Age' ],
+//     [ '42', 'Bruce', 'Knight', '41' ],
+//     [ '57', 'Bob', 'Fry Cook', '19' ],
+//     [ '63', 'Blaine', 'Quiz Master', '58' ],
+//     [ '98', 'Bill', 'Doctor’s Assistant', '26' ]
+//   ]
+// TO: [{ id: "42", name: "Bruce", occupation: "Knight", age: "41" },
+//  { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" },
+//  { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" },
+//  { id: "98", name: "Bill", occupation: "Doctor’s Assistant", age: "26" }]
+
+/* Checklist */
+// adjust the part 2 function so that the arrays we would like to transform can be called upon in this new function. ###
+// 
