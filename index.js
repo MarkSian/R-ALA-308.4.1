@@ -78,11 +78,8 @@
 //  ["63", "Blaine", "Quiz Master", "58"],
 //  ["98", "Bill", "Doctor’s Assistant", "26"]]
 
-// csvString1/2 are strings meant to be parsed and stored in a two-dimensional array.
-const csvString1 = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26";
-const csvString2 = "Index,Mass (kg),Spring 1 (m),Spring 2 (m)\n1,0.00,0.050,0.050\n2,0.49,0.066,0.066\n3,0.98,0.087,0.080\n4,1.47,0.116,0.108\n5,1.96,0.142,0.138\n6,2.45,0.166,0.158\n7,2.94,0.193,0.174\n8,3.43,0.204,0.192\n9,3.92,0.226,0.205\n10,4.41,0.238,0.232";
-
-// Transform the parseCSV function to accomplish the new task: store the result in a two-dimensional array
+/* Checklist */
+// Transform the parseCSV function to accomplish the new task: store the result in a two-dimensional array ###
 // Declare my initializing variables ###
 // need a for loop to iterate through the csv string and if statements to check for commas and new lines. ###
 // when a comma is found, .push the current cell to the current row.  ###
@@ -97,6 +94,10 @@ const csvString2 = "Index,Mass (kg),Spring 1 (m),Spring 2 (m)\n1,0.00,0.050,0.05
 // return the rows array. ###
 // call the parseCSV2D function with csvString1 and csvString2 as arguments. ###    
 // log the rows array to the console. ###
+
+// csvString1/2 are strings meant to be parsed and stored in a two-dimensional array.
+const csvString1 = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26";
+const csvString2 = "Index,Mass (kg),Spring 1 (m),Spring 2 (m)\n1,0.00,0.050,0.050\n2,0.49,0.066,0.066\n3,0.98,0.087,0.080\n4,1.47,0.116,0.108\n5,1.96,0.142,0.138\n6,2.45,0.166,0.158\n7,2.94,0.193,0.174\n8,3.43,0.204,0.192\n9,3.92,0.226,0.205\n10,4.41,0.238,0.232";
 
 function parseCSV2D(csv) {
     const rows = []; // Initialize an array to store the rows (empty)
@@ -181,3 +182,5 @@ parseCSV2D(csvString2);
 //     [ '9', '3.92', '0.226', '0.205' ],
 //     [ '10', '4.41', '0.238', '0.232' ]
 //   ]
+
+
