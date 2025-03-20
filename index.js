@@ -184,11 +184,13 @@ console.log(resultArray2);
 //     [ '10', '4.41', '0.238', '0.232' ]
 //   ]
 
+
 /* Feeling Loopy Part 3: Transforming Data */
 // We will transform our rows into objects
 // Create an object where the key of each value is the heading for that value's column.
 // Convert these keys to all lowercase letters for consistency.
 // Store these objects in an array, in the order that they were originally listed.
+// The heading for each column will be stored in the object keys.
 // You do not need to create an object for the heading row itself
 // *While we can add this functionality to the parseCSV2D function, it is better to create a new function for this task. Be sure to make a new function!!!
 
@@ -207,4 +209,15 @@ console.log(resultArray2);
 
 /* Checklist */
 // adjust the part 2 function so that the arrays we would like to transform can be called upon in this new function. ###
-// 
+// declare a new function transformArray that takes in the array we would like to transform as an argument. ###
+// the resultArray is where resultArray1 and resultArray2 will pass through. ###
+// map through the first row of the csv and lowercase each heading. ###
+// declare a new array called transformedArray. ###
+
+function transformArray(resultArray) {
+    // resultArray[0] is the first row of the CSV, which is the heading row and converts it to lowercase.
+    // this is accomplished using the .map method to iterate through the first row and convert each heading to lowercase.
+    const heading = resultArray[0].map(heading => heading.toLowerCase());
+    // declare a new array to store the transformed data
+    const transformedArray = [];
+}
