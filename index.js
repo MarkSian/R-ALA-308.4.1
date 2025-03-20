@@ -213,6 +213,7 @@ console.log(resultArray2);
 // the resultArray is where resultArray1 and resultArray2 will pass through. ###
 // map through the first row of the csv and lowercase each heading. ###
 // declare a new array called transformedArray. ###
+// we must now loop through each row of data * excluding or skipping the first row. ###
 
 function transformArray(resultArray) {
     // resultArray[0] is the first row of the CSV, which is the heading row and converts it to lowercase.
@@ -220,4 +221,20 @@ function transformArray(resultArray) {
     const heading = resultArray[0].map(heading => heading.toLowerCase());
     // declare a new array to store the transformed data
     const transformedArray = [];
+    // loop starts from c = 1 to skip the first row of the csv. c = 0 contains the headings and NOT the data.
+    // c++ lol
+    for (let c = 1; c < resultArray.length; c++) {
+        // row will contain the current row of data.
+        const row = resultArray[c];
+        console.log('Processing Row:', row); // Log the current row
+        // obj is initialized as an empty object. As such it will store the key-value pairs for the current row.
+        const obj = {};
+
+    }
 }
+transformArray(resultArray1);
+
+
+transformArray(resultArray2);
+
+
