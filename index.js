@@ -89,7 +89,9 @@ const csvString2 = "Index,Mass (kg),Spring 1 (m),Spring 2 (m)\n1,0.00,0.050,0.05
 // just like before, upon .push to the current row, we must reset the current cell. ###
 // when a new line \n is found, .push the current cell to current row ###
 // check if the rows array is empty. If it is, set the number of columns to the length of the current row. ###
-// add the current row to the rows array. ###
+// handle how the currentRow interacts with rows. ###
+// reset currentRow and currentCell to start building the next row and cell. ###
+// else statement to handle characters that are not commas or \n. ###
 function parseCSV2D(csv) {
     const rows = []; // Initialize an array to store the rows (empty)
     let currentCell = ''; // Initialize the string to store to the current cell
@@ -115,8 +117,19 @@ function parseCSV2D(csv) {
             if (rows.length === 0) {
                 numColumn = currentRow.length;
             }
+            // handles how row is added to rows array
+            // currentRow is added to the rows array
+            rows.push(currentRow);
+            console.log('Rows after completing a row:', rows);
+            // reset to start building next row
 
-
+            currentRow = [];
+            // reset to start builing the next cell
+            currentCell = '';
+        }
+        // else statement that handles characters that are not commas or \n
+        else {
+            currentCell += char;
         }
     }
 
