@@ -92,6 +92,12 @@ const csvString2 = "Index,Mass (kg),Spring 1 (m),Spring 2 (m)\n1,0.00,0.050,0.05
 // handle how the currentRow interacts with rows. ###
 // reset currentRow and currentCell to start building the next row and cell. ###
 // else statement to handle characters that are not commas or \n. ###
+// account for the last cell in the csv string. ###
+// account for the last row in the csv string. ###
+// return the rows array. ###
+// call the parseCSV2D function with csvString1 and csvString2 as arguments. ###    
+// log the rows array to the console. ###
+
 function parseCSV2D(csv) {
     const rows = []; // Initialize an array to store the rows (empty)
     let currentCell = ''; // Initialize the string to store to the current cell
@@ -120,7 +126,6 @@ function parseCSV2D(csv) {
             // handles how row is added to rows array
             // currentRow is added to the rows array
             rows.push(currentRow);
-            console.log('Rows after completing a row:', rows);
             // reset to start building next row
 
             currentRow = [];
@@ -133,9 +138,46 @@ function parseCSV2D(csv) {
         }
     }
 
-}
-// Test csvString1
-parseCSV2D(csvString1);
+    // account for the last cell 
+    // after the loop, if there’s any remaining data in currentCell, it is added to the currentRow
+    if (currentCell) {
 
-// Test csvString2
+        currentRow.push(currentCell);
+    }
+    // account for the last row
+    // after the loop, if there’s any remaining data in currentRow, it is added to the rows array
+    if (currentRow.length === numColumn) {
+        rows.push(currentRow);
+    }
+    // return the parsed rows array and log it to the console
+    console.log(rows);
+    return rows;
+
+
+}
+// call the parseCSV2D function with csvString1 
+parseCSV2D(csvString1);
+// log result:
+// [
+//     [ 'ID', 'Name', 'Occupation', 'Age' ],      
+//     [ '42', 'Bruce', 'Knight', '41' ],
+//     [ '57', 'Bob', 'Fry Cook', '19' ],
+//     [ '63', 'Blaine', 'Quiz Master', '58' ],    
+//     [ '98', 'Bill', 'Doctor’s Assistant', '26' ]
+//   ]
+
 parseCSV2D(csvString2);
+// log result:
+// [
+//     [ 'Index', 'Mass (kg)', 'Spring 1 (m)', 'Spring 2 (m)' ],
+//     [ '1', '0.00', '0.050', '0.050' ],
+//     [ '2', '0.49', '0.066', '0.066' ],
+//     [ '3', '0.98', '0.087', '0.080' ],
+//     [ '4', '1.47', '0.116', '0.108' ],
+//     [ '5', '1.96', '0.142', '0.138' ],
+//     [ '6', '2.45', '0.166', '0.158' ],
+//     [ '7', '2.94', '0.193', '0.174' ],
+//     [ '8', '3.43', '0.204', '0.192' ],
+//     [ '9', '3.92', '0.226', '0.205' ],
+//     [ '10', '4.41', '0.238', '0.232' ]
+//   ]
