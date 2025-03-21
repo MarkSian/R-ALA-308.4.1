@@ -214,6 +214,7 @@ console.log(resultArray2);
 // map through the first row of the csv and lowercase each heading. ###
 // declare a new array called transformedArray. ###
 // we must now loop through each row of data * excluding or skipping the first row. ###
+//debug
 
 function transformArray(resultArray) {
     // resultArray[0] is the first row of the CSV, which is the heading row and converts it to lowercase.
@@ -255,6 +256,47 @@ console.log(transformedData1);
 //       age: '26'
 //     }
 //   ]
+
+/* Feeling Loopy Part 4: Sorting and Manipulating Data */
+// Remove the last element from the sorted array
+// Insert the following object at index 1: { id: "48", name: "Barry", occupation: "Runner", age: "25" }
+// Add the following object to end of the array: { id: "7", name: "Bilbo", occupation: "None", age: "111" }
+// Use the values of each object within the array and the array's length property to calculate the average age of the group.
+// This calculation should be accomplished using a loop.
+// Intended result:
+// [{ id: "42", name: "Bruce", occupation: "Knight", age: "41" },
+//     { id: "48", name: "Barry", occupation: "Runner", age: "25" },
+//     { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" },
+//     { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" },
+//     { id: "7", name: "Bilbo", occupation: "None", age: "111" }]
+
+
+/* Checklist */
+// do not have to make a new function for this task.
+// remove the last element from the transformedData1 array using the .pop method. ###
+// insert at index 1 { id: "48", name: "Barry", occupation: "Runner", age: "25" } using the .splice method. ###
+// add { id: "7", name: "Bilbo", occupation: "None", age: "111" } to the end of the array using the .push method. ###
+
+// remove the last element from the transformedData1 array
+transformedData1.pop();
+
+// insert at index 1 { id: "48", name: "Barry", occupation: "Runner", age: "25" }
+transformedData1.splice(1, 0, { id: "48", name: "Barry", occupation: "Runner", age: "25" });
+
+// add { id: "7", name: "Bilbo", occupation: "None", age: "111" } to the end of the array
+transformedData1.push({ id: "7", name: "Bilbo", occupation: "None", age: "111" });
+
+console.log(transformedData1);
+//log result:
+// [
+//     { id: '42', name: 'Bruce', occupation: 'Knight', age: '41' },
+//     { id: '48', name: 'Barry', occupation: 'Runner', age: '25' },
+//     { id: '57', name: 'Bob', occupation: 'Fry Cook', age: '19' },
+//     { id: '63', name: 'Blaine', occupation: 'Quiz Master', age: '58' },
+//     { id: '7', name: 'Bilbo', occupation: 'None', age: '111' }
+//   ]
+
+
 
 
 
