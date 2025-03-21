@@ -226,15 +226,23 @@ function transformArray(resultArray) {
     for (let c = 1; c < resultArray.length; c++) {
         // row will contain the current row of data.
         const row = resultArray[c];
-        console.log('Processing Row:', row); // Log the current row
         // obj is initialized as an empty object. As such it will store the key-value pairs for the current row.
         const obj = {};
 
+        // loop through each cell in the row
+        for (let j = 0; j < heading.length; j++) {
+            // sets the key of obj to "id", "name", etc and the value to its respective key in the row.
+            obj[heading[j]] = row[j];
+        }
+        //the object for the current row is added to the target array
+        transformedArray.push(obj);
+
     }
+
+    return transformedArray;
 }
-transformArray(resultArray1);
+const transformedData1 = transformArray(resultArray2);
+console.log(transformedData1);
 
-
-transformArray(resultArray2);
 
 
