@@ -312,8 +312,37 @@ for (const person of transformedData1) {
 const averageAge = totalAge / transformedData1.length;
 
 console.log(`Average age is ${averageAge} years old`);
-//log result: Average age is 50.8 years old
+// log result: Average age is 50.8 years old
 
 
 
+/* Feeling Loopy Part 5: Full Circle */
+// Convert back to a CSV string
+// Assume that the data we are manipulating is from the previous part ###
+// we will need a heading and a row variable ###
+// combine strings seperated by commas into a single string ###
 
+
+function reverse(transformedData) {
+    // Object.keys(transformedData[0]) extracts the keys of the first object in the array
+    // .join(',') joins the keys into a string seperated by commas
+    const heading = Object.keys(transformedData[0]).join(',');
+    // map through the array to extract the values of each object
+    // combine these values into a string seperated by commas
+    const row = transformedData.map(obj => Object.values(obj).join(','));
+    // combines the rows into a single string with each row seperated by a new line
+    return `${heading}\n${row.join('\n')}`;
+}
+
+const transformToCSV = reverse(transformedData1);
+console.log("CSV Output:");
+console.log(transformToCSV);
+
+//log result:
+// CSV Output:
+// id,name,occupation,age
+// 42,Bruce,Knight,41
+// 48,Barry,Runner,25
+// 57,Bob,Fry Cook,19
+// 63,Blaine,Quiz Master,58
+// 7,Bilbo,None,111
