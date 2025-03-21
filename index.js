@@ -276,6 +276,9 @@ console.log(transformedData1);
 // remove the last element from the transformedData1 array using the .pop method. ###
 // insert at index 1 { id: "48", name: "Barry", occupation: "Runner", age: "25" } using the .splice method. ###
 // add { id: "7", name: "Bilbo", occupation: "None", age: "111" } to the end of the array using the .push method. ###
+// calculate the average age of the group. ###
+// we will need to parse the age of each person to an integer. ###
+
 
 // remove the last element from the transformedData1 array
 transformedData1.pop();
@@ -297,6 +300,19 @@ console.log(transformedData1);
 //   ]
 
 
+// set totalAge to 0
+let totalAge = 0;
+// loop through each object in the array
+for (const person of transformedData1) {
+    //parse the age of each person and convert the age(string) to an integer
+    //add the age to the total
+    totalAge += parseInt(person.age);
+}
+// calculate the average by dividing by the number of objects in the array
+const averageAge = totalAge / transformedData1.length;
+
+console.log(`Average age is ${averageAge} years old`);
+//log result: Average age is 50.8 years old
 
 
 
