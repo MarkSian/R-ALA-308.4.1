@@ -241,8 +241,21 @@ function transformArray(resultArray) {
 
     return transformedArray;
 }
-const transformedData1 = transformArray(resultArray2);
+const transformedData1 = transformArray(resultArray1);
 console.log(transformedData1);
+//log result: * Bill did not format correctly most likely due to the special character in Doctor's Assistant. I'm not sure how to tackle that issue.
+// [
+//     { id: '42', name: 'Bruce', occupation: 'Knight', age: '41' },
+//     { id: '57', name: 'Bob', occupation: 'Fry Cook', age: '19' },
+//     { id: '63', name: 'Blaine', occupation: 'Quiz Master', age: '58' },
+//     {
+//       id: '98',
+//       name: 'Bill',
+//       occupation: 'Doctor’s Assistant',
+//       age: '26'
+//     }
+//   ]
+
 
 
 
